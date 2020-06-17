@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,10 @@
     <!-- <link rel="stylesheet" type="text/css" href="nyt.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-​
-    <style>
-        .jumbotron {
-    margin-left: 25px;
-    margin-right: 25px;
-    text-align: center;
-    font-weight: bold;
-    background-color: rgb(18, 18, 92) !important;;
-    color: white;
-}
-​
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> ​
+    <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
     <header>
         <div class="jumbotron jumbotron-fluid">
@@ -44,12 +35,8 @@
                         <!-- start of the form -->
                         <form>
                             <div class="form-group">
-                                <label for="searchfield">Country:</label>
-                                <input class="form-control" id="search-term" aria-describedby="searchfield">
-                                <label for="recordsretrieved">County:</label>
-                                <input class="form-control" id="records" aria-describedby="recordsretrieved">
-                                <label for="startyr">City:</label>
-                                <input class="form-control" id="start-year" aria-describedby="startyr">
+                                <label for="searchfield">Zip Code:</label>
+                                <input class="form-control" id="zipCode" aria-describedby="searchfield">
                             </div>
                             <!-- search button -->
                             <button id="searchBtn" class="btn btn-primary">
@@ -72,7 +59,13 @@
                     <div class="card-body">
                         <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
                             Results</h5>
-                        <div class="results"></div>
+                        <div class="row results">
+                            
+                            <section class="resultdiv p-2"> Results Test 1</section>
+                            <section class="resultdiv p-2"> Results Test 2</section>
+                            <section class="resultdiv p-2"> Results Test 3</section>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,46 +73,9 @@
     </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-​
-        $("#searchBtn").on("click", function(event) {
-                    event.preventDefault();
-                    var searchTerm = $("#search-term").val();
-                    console.log(searchTerm);
-                    var beginDate = $("#start-year").val() + "0101";
-                    console.log(beginDate);
-                    var endDate = $("#end-year").val() + "1231";
-                    console.log(endDate);
-                    var numRecords = $("#records").val();
-​
-                    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&api-key=MNbJlZSrmfo8n7sYefdYulu2plB8kTUa&facet=true&begin_date=" + beginDate + "&end_date=" + endDate;
-​
-​
-​
-                    $.ajax({
-                        url: queryURL,
-                        method: 'GET'
-                    }).then (function(result) {
-                        console.log(result);
-                        var list = $("<ol>");
-​
-                        for (var i = 0; i < numRecords; i++) {
-                            var headline = result.response.docs[i].headline.main;
-                            var author = result.response.docs[i].byline.original;
-                            var newItem = $("<li>").text(headline);
-                            var authorP = $("<p>").text(author);
-                            newItem.append(authorP);
-                            list.append(newItem);
-                            $(".results").append(list);
-                        }
-                    })
-        })
-​
-        
-    </script>
-​
+    <script src="keys.js"></script>
+    <script src="script.js"></script>
+    ​
 </body>
+
 </html>
-
-
-

@@ -1,0 +1,12 @@
+.jumbotron {
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(18, 18, 92);
+    color: white;
+}​
+
+.results {
+    align-content: center;
+}
