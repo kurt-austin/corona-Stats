@@ -1,125 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coronavirus Stats</title>
-    <!-- <link rel="stylesheet" type="text/css" href="nyt.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-​
-    <style>
-        .jumbotron {
-    margin-left: 25px;
-    margin-right: 25px;
-    text-align: center;
-    font-weight: bold;
-    background-color: rgb(18, 18, 92) !important;;
-    color: white;
-}
-​
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css" />
+   
 </head>
+
+
+<!-- HTML coded by Brianna -->
 <body>
     <header>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">
-                    <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i>Coronavirus (COVID-19) Statistics</h1>
-                    <p class="lead"></p>
+        <div class="columns is-centered top">
+            <div class="column">
+                <h1>
+                    <i class="fa fa fa-heartbeat" aria-hidden="true"></i>
+                    Coronavirus (COVID-19) Statistics
+                </h1>
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+
+
+    <main>
+        <div class="columns is-centered searchbox">
+            <div class="column is-half">
                 <!-- Card -->
                 <div class="card">
-                    <div class="card-body">
-                        <div class="card-topper border-bottom">
-                            <h5 class="card-title "><i class="fa fa-list-alt" aria-hidden="true"></i>
-                                Search Parameters</h5>
-                        </div>
-                        <!-- start of the form -->
-                        <form>
-                            <div class="form-group">
-                                <label for="searchfield">Country:</label>
-                                <input class="form-control" id="search-term" aria-describedby="searchfield">
-                                <label for="recordsretrieved">County:</label>
-                                <input class="form-control" id="records" aria-describedby="recordsretrieved">
-                                <label for="startyr">City:</label>
-                                <input class="form-control" id="start-year" aria-describedby="startyr">
+                    <div class="card-content">
+                        <div class="media">
+                            <!-- search box title and input field -->
+                            <div class="media-content">
+                                <p class="title is-5">Zip Code</p>
+                                <input id="zipCode" class="input is-4" type="text" placeholder="Type your Zip Code Here">
                             </div>
-                            <!-- search button -->
-                            <button id="searchBtn" class="btn btn-primary">
-                                <i class="fa fa-search" aria-hidden="true"></i> Search
-                            </button>
-                            <!-- clear button -->
-                            <button id="searchBtn" class="btn btn-primary">
-                                <i class="fa fa-trash" aria-hidden="true"></i>Clear Results
-                            </button>
-                        </form>
+                            
+                        </div>
+                        <!-- search button -->
+                        <div class="control">
+                            <button id="searchBtn" class="button is-primary"><i class="fa fa-search" aria-hidden="true"></i>Search </button>
+                        </div>
+                        <!-- Search box text -->
+                        <div class="content">
+                            Dont know the zip code? Enter the city or address here and find the zip code: <a class="mapdev" href="https://www.mapdevelopers.com/what-is-my-zip-code.php">https://www.mapdevelopers.com/what-is-my-zip-code.php</a>.
+                            
+                        </div>
                     </div>
-                </div> <!-- end of card -->
+                </div> <!-- end of search box card -->
             </div>
         </div> <!-- end of first row-->
+
+
+        
+
         <!-- second row-->
-        <div class="row">
-            <div class="col-12">
-                <!-- second card -->
+        <div class="columns is-centered searchbox">
+            <div class="column is-two-thirds">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            Results</h5>
-                        <div class="results"></div>
+                    <div class="card-content">
+                        <!-- <div class="media">
+                            <div class="media-content">
+                                <p class="title is-3">Results</p>
+                            </div>
+                            <div class="media-content cdsnap">
+                                <p class="title is-3">Current Day Snapshot</p>
+                            </div>
+                            <div class="media-content spacer">
+                            </div>
+                        </div> -->
+                        <div class="media">
+
+                            
+                            <div class="container is-full level firstdata">
+                                <div class="column">
+                                    <div id="tabs-with-content">
+                                        <div class="tabs is-centered">
+                                          <ul>
+                                            <li><a>Confirmed Today</a></li>
+                                            <li><a>% of Tests Positive:</a></li>
+                                            <li><a># Deaths Today:</a></li>
+                                          </ul>
+                                        </div>
+                                        <div>
+                                          <section class="tab-content">
+                                            <p class="title is-4 level-item">Confirmed Today:<p></p></p>
+                                            <p class= "confirmed"></p>
+                                            <canvas id="casesChart"></canvas>
+                                          </section>
+                                          <section class="tab-content">
+                                            <p class="title is-4 level-item">% of Tests Positive:<p></p></p>
+                                            <p class= "positive"></p>
+                                            <canvas id="testsChart"></canvas>
+                                          </section>
+                                          <section class="tab-content">
+                                            <p class="title is-4 level-item"># Deaths Today:<p></p></p>
+                                            <p class= "deaths"></p>
+                                            <canvas id="deathsChart"></canvas>
+                                          </section>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <!-- third row -->
+                        <div class="column media is-centered">
+                            <p class="title is-4 level-item">Articles</p>
+                            <div class= "articles">
+                                <ol class= "articlesList tile">
+
+                                </ol>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-​
-        $("#searchBtn").on("click", function(event) {
-                    event.preventDefault();
-                    var searchTerm = $("#search-term").val();
-                    console.log(searchTerm);
-                    var beginDate = $("#start-year").val() + "0101";
-                    console.log(beginDate);
-                    var endDate = $("#end-year").val() + "1231";
-                    console.log(endDate);
-                    var numRecords = $("#records").val();
-​
-                    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&api-key=MNbJlZSrmfo8n7sYefdYulu2plB8kTUa&facet=true&begin_date=" + beginDate + "&end_date=" + endDate;
-​
-​
-​
-                    $.ajax({
-                        url: queryURL,
-                        method: 'GET'
-                    }).then (function(result) {
-                        console.log(result);
-                        var list = $("<ol>");
-​
-                        for (var i = 0; i < numRecords; i++) {
-                            var headline = result.response.docs[i].headline.main;
-                            var author = result.response.docs[i].byline.original;
-                            var newItem = $("<li>").text(headline);
-                            var authorP = $("<p>").text(author);
-                            newItem.append(authorP);
-                            list.append(newItem);
-                            $(".results").append(list);
-                        }
-                    })
-        })
-​
+
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
         
-    </script>
-​
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="secrets.js"></script>
+        <script src="script.js"></script>
+        
+        ​
 </body>
+
 </html>
-
-
-

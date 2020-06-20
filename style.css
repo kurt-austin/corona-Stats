@@ -1,0 +1,50 @@
+/* CSS Coded by Brianna */
+
+.top {
+    height: 100px;
+    margin-left: 50px;
+    margin-right: 50px;;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(18, 18, 92);
+    color: white;
+    font-size: 45px;
+}​
+/* .input{
+    width: 150px !important;;
+} */
+
+
+.results {
+    align-content: center;
+}
+
+#zipCode {
+    width: 15vw;
+}
+
+.cdsnap {
+    /* border: 2px solid red; */
+    padding: 0;
+    /* text-align: center; */
+    width: 2%;
+}
+
+.firstdata {
+    /* border: 2px solid red; */
+    padding: 0;
+    
+}
+
+#tabs-with-content .tabs:not(:last-child) {
+    margin-bottom: 0;
+  }
+  
+  #tabs-with-content .tab-content {
+    padding: 1rem;
+    display: none;
+  }
+  
+  #tabs-with-content .tab-content.is-active {
+    display: block;
+  }
