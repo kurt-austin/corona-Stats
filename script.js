@@ -1,24 +1,26 @@
+
 var olArticles;
 var liArticleList;
 var numberOfArticles = 2
 var currentDate = moment().format('YYYY-MM-DD');
-// var newsAPIKey = "2881b1ed68af4811b2ae32930c43de81" ;
 var briAPIKey = "e3ad76ed6b1a4d8d810fdf1baad01f79";
 var kieranAPIKey = "decae5c6-eb72-4249-9f39-1d56866c78ef";
-// var queryArticlesTwo = "https://newsapi.org/v2/everything?q=coronavirus&from=" + currentDate + "&sortBy=popularity&pageSize="+ numberOfArticles + "&apiKey=" + briAPIKey;
+var hideLower = $("#second-row");
+var confirmedTodayEl = $(".confirmed");
+var percentagePositiveEl = $(".positive");
+var deathsEl = $(".deaths");
 
 
 var queryArticles = "https://content.guardianapis.com/search?to-date=" + currentDate + "&order-by=newest&section=us-news&q=coronavirus&api-key=" + kieranAPIKey;
 
 
-
-
-
+hideLower.hide();
 
 
 
 $("#searchBtn").on("click", function (event) {
     event.preventDefault();
+    hideLower.show();
     var zipCode = $("#zipCode").val();
  
     var queryURL = "https://api.weather.com/v3/wx/disease/tracker/county/60day?postalKey=" + zipCode + ":US&format=json&apiKey=" + apiKey;
@@ -34,12 +36,15 @@ $("#searchBtn").on("click", function (event) {
         var deaths = response.covid19.deaths[0];
         var percentagePositive = ((response.covid19.confirmed[0] / response.covid19.testsPerformed[0]) * 100).toFixed(2) + "%";
         var populationConfirmed = ((response.covid19.confirmed[0] / response.covid19.totalPopulation) * 100).toFixed(2) + "%";
+        confirmedTodayEl.text("Confirmed Today:  " +confirmedToday);
+        percentagePositiveEl.text("% of Tests Positive:  " + percentagePositive);
+        deathsEl.text("# Deaths Today:  " + deaths);
         // console.log(response);
         // console.log(confirmedToday);
         // console.log(deaths);
         // console.log(percentagePositive);
         // console.log(populationConfirmed);
-
+        
 
         var ctx = document.getElementById("casesChart").getContext("2d");
         var confirmedCases = (response.covid19.confirmed).reverse();
