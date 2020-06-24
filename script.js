@@ -7,6 +7,7 @@ var hideLower = $(".startHide");
 var confirmedTodayEl = $(".confirmed");
 var percentagePositiveEl = $(".positive");
 var deathsEl = $(".deaths");
+var apiKey = "9d2908c81003444ea908c81003b44ed4";
 
 var queryArticles = "https://content.guardianapis.com/search?to-date=" + currentDate + "&order-by=newest&section=us-news&q=coronavirus&api-key=" + kieranAPIKey;
 
