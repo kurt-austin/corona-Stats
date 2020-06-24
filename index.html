@@ -14,17 +14,19 @@
 
 <!-- HTML coded by Brianna -->
 <body>
-    <header>
-        <div class="columns is-centered top">
-            <div class="column">
-                <h1>
+    <header class="covidImg">
+        <section id="title" class="hero is-dark covidBanner">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">
                     <i class="fa fa fa-heartbeat" aria-hidden="true"></i>
                     Coronavirus (COVID-19) Statistics
                 </h1>
+              </div>
             </div>
-        </div>
+          </section>
     </header>
-
+    
 
     <main>
         <div class="columns is-centered searchbox">
@@ -42,11 +44,12 @@
                         </div>
                         <!-- search button -->
                         <div class="control">
-                            <button id="searchBtn" class="button is-primary"><i class="fa fa-search" aria-hidden="true"></i>Search </button>
+                            <button id="searchBtn" class="button is-dark"><i class="fa fa-search" aria-hidden="true"> </i>  Search </button>
                         </div>
+                        <br>
                         <!-- Search box text -->
                         <div class="content">
-                            Dont know the zip code? Enter the city or address here and find the zip code: <a class="mapdev" href="https://www.mapdevelopers.com/what-is-my-zip-code.php">https://www.mapdevelopers.com/what-is-my-zip-code.php</a>.
+                            Dont know the zip code? Enter the city or address here and find the zip code: <a class="mapdev color" href="https://www.mapdevelopers.com/what-is-my-zip-code.php">https://www.mapdevelopers.com/what-is-my-zip-code.php</a>.
                             
                         </div>
                     </div>
@@ -58,86 +61,68 @@
         
 
         <!-- second row-->
-        <div class="columns is-centered searchbox">
+        <div class="columns is-centered searchbox startHide">
             <div class="column is-two-thirds">
                 <div class="card">
                     <div class="card-content">
-                        <!-- <div class="media">
-                            <div class="media-content">
-                                <p class="title is-3">Results</p>
-                            </div>
-                            <div class="media-content cdsnap">
-                                <p class="title is-3">Current Day Snapshot</p>
-                            </div>
-                            <div class="media-content spacer">
-                            </div>
-                        </div> -->
                         <div class="media">
-
-                            
+                            <!-- Graph/Data Container -->
                             <div class="container is-full level firstdata">
                                 <div class="column">
                                     <div id="tabs-with-content">
                                         <div class="tabs is-centered">
                                           <ul>
                                             <li><a>Confirmed Today</a></li>
-                                            <li><a>% of Tests Positive:</a></li>
-                                            <li><a># Deaths Today:</a></li>
+                                            <li><a>Tests Positive</a></li>
+                                            <li><a>Deaths Today</a></li>
                                           </ul>
                                         </div>
                                         <div>
                                           <section class="tab-content">
-                                            <p class="title is-4 level-item">Confirmed Today:<p></p></p>
-                                            <p class= "confirmed"></p>
+                                            <p class="title is-4 level-item confirmed"></p>
                                             <canvas id="casesChart"></canvas>
                                           </section>
                                           <section class="tab-content">
-                                            <p class="title is-4 level-item">% of Tests Positive:<p></p></p>
-                                            <p class= "positive"></p>
+                                            <p class="title is-4 level-item positive"></p>
                                             <canvas id="testsChart"></canvas>
                                           </section>
                                           <section class="tab-content">
-                                            <p class="title is-4 level-item"># Deaths Today:<p></p></p>
-                                            <p class= "deaths"></p>
+                                            <p class="title is-4 level-item deaths"></p>
                                             <canvas id="deathsChart"></canvas>
                                           </section>
-                                          
+                                          <section id="sourcesArea">
+                                        </section>
                                         </div>
                                     </div>
                                 </div>
                             </div>  
                         </div>
-                        <!-- third row -->
-                        <div class="column media is-centered">
-                            <p class="title is-4 level-item">Articles</p>
-                            <div class= "articles">
-                                <ol class= "articlesList tile">
-
-                                </ol>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
-
-
-
+        <!-- third row -->
+        <div class="columns is-centered searchbox startHide">
+            <div class="column is-full">
+                <div class="card">
+                    <div class="card-content">
+                    <div class="column is-full"> 
+                        <div class="column media is-centered">
+                            <p class="title is-3 level-item">Articles</p>
+                            <div class="tile is-ancestor">
+                                <div class= "articles">
+                                    <ol class= "articlesList tile"></ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-
-
-
-
-
-
-
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script src="secrets.js"></script>

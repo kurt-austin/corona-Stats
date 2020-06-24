@@ -1,50 +1,88 @@
-/* CSS Coded by Brianna */
 
-.top {
-    height: 100px;
-    margin-left: 50px;
-    margin-right: 50px;;
-    text-align: center;
-    font-weight: bold;
-    background-color: rgb(18, 18, 92);
+.hero {
+
+    text-align: center; 
     color: white;
-    font-size: 45px;
-}​
-/* .input{
-    width: 150px !important;;
-} */
-
-
-.results {
-    align-content: center;
-}
-
-#zipCode {
-    width: 15vw;
-}
-
-.cdsnap {
-    /* border: 2px solid red; */
-    padding: 0;
-    /* text-align: center; */
-    width: 2%;
-}
-
-.firstdata {
-    /* border: 2px solid red; */
-    padding: 0;
     
-}
+    margin-bottom: 15px;
+    
+    }
+    
+    .top {
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(18, 18, 20);
+        color: white;
+        font-size: 45px; 
+    }​
+    
+    #levelers {
+        margin-top: 20px !important;;
+    }
+    
+    .firstdata {
+       
+        padding: 0;
+        
+    }
+    
+    #tabs-with-content .tabs:not(:last-child) {
+        margin-bottom: 0;
+      }
+      
+      #tabs-with-content .tab-content {
+        padding: 1rem;
+        display: none;
+      }
+      
+      #tabs-with-content .tab-content.is-active {
+        display: block;
+      }
+      .padder {
+          margin: 20px;
+      }
+      .fa-facebook-official, .fa-twitter, .fa-envelope, .fa-linkedin {
+          font-size: 30px;
+          
+      }
+      .title {
+          font-size: 30px;
+      }
+      .fa-twitter {
+        color: #55ACEE;
+      }
+    
+      .fa-linkedin {
+        color: #007bb5; 
+      }
+      .fa-facebook {
+        color: #3B5998;
+      }
+    
+      #sourcesArea {
+          font-style: italic;
+      }
+    
+      .covidBanner {
+          background-image: url("covidbanner.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 50px 0;
 
-#tabs-with-content .tabs:not(:last-child) {
-    margin-bottom: 0;
-  }
-  
-  #tabs-with-content .tab-content {
-    padding: 1rem;
-    display: none;
-  }
-  
-  #tabs-with-content .tab-content.is-active {
-    display: block;
-  }
+      }
+    
+      article.tile  {
+          display: flex;
+          flex-direction: column;
+          
+      }
+    
+      .level {
+          margin-top: auto;
+      }
+
+      a.color {
+          color: #c45850;
+      }
+    
+    
