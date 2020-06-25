@@ -36,7 +36,7 @@ In the first photo, you can see two streams of data displaying.
 
 ![DataOn-Photo](/Assets/testpositive.png)
 
-If the user chooses, the either of the two streams of data can be toggled off so that only one line of data displays at a time. The user may do this by clicking the title for that line above the chart. It will strikethrough and disappear from the graph, until clicked again.
+If the user chooses, then either of the two streams of data can be toggled off so that only one line of data displays at a time. The user may do this by clicking the title for that line above the chart. It will strikethrough and disappear from the graph, until clicked again.
 
 ![DataOff-Photo](/Assets/crossedoff.png)
 
