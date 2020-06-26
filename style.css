@@ -64,5 +64,16 @@ a.color {
     }
 }
 
+.media {
+    display: inherit;
+}
 
+canvas {
+    width: 100%;
+}
+
+.tabs {
+    overflow: visible;
+    overflow-x: visible;
+}
     
